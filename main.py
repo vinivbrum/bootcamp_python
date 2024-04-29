@@ -3,40 +3,93 @@
 # que todos os registros tenham valores positivos para `quantidade` e `preço`. 
 # Escreva um programa que verifique esses campos e imprima "Dados válidos" se ambos 
 # forem positivos ou "Dados inválidos" caso contrário.
-qualidade = 20
-preco = 10
+# qualidade = 20
+# preco = 10
 
-if isinstance(qualidade,int) and isinstance(preco,int):
-    if qualidade > 0 and preco > 0:
-        print ('tudo certo')
-    else: 
-        print ('dados invalidos')
-else: 
-    print('o dado não é um número')
+# if isinstance(qualidade,int) and isinstance(preco,int):
+#     if qualidade > 0 and preco > 0:
+#         print ('tudo certo')
+#     else: 
+#         print ('dados invalidos')
+# else: 
+#     print('o dado não é um número')
 
 
 ### Exercício 2: Classificação de Dados de Sensor
 # Imagine que você está trabalhando com dados de sensores IoT. 
 # Os dados incluem medições de temperatura. Você precisa classificar cada leitura 
 # como 'Baixa', 'Normal' ou 'Alta'. Considerando que:
+# temperatura = int(input())
+
+# if temperatura >= 20 :
+#     print('Alta')
+# elif temperatura < 20 and temperatura >= 0 :
+#     print('Media')
+# else :
+#     print('Baixa')
+
+
 
 ### Exercício 3: Filtragem de Logs por Severidade
 # Você está analisando logs de uma aplicação e precisa filtrar mensagens 
 # com severidade 'ERROR'. Dado um registro de log em formato de dicionário 
 # como `log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}`, 
 # escreva um programa que imprima a mensagem se a severidade for 'ERROR'.
+# log = [{'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'},
+# {'timestamp': '2021-06-23 10:10:00', 'level': 'ERROR', 'message': 'Falha na conexão'},
+# {'timestamp': '2021-06-23 10:20:00', 'level': 'OK', 'message': 'Falha na conexão'},
+# {'timestamp': '2021-06-23 10:30:00', 'level': 'ERROR', 'message': 'Falha na conexão'},
+# {'timestamp': '2021-06-23 10:40:00', 'level': 'ERROR', 'message': 'Falha na conexão'}]
+
+# contagem_erros = {}
+# for entry in log:
+#     if entry['level'] == 'ERROR': 
+#         contagem_erros[entry['timestamp']] = contagem_erros.get(entry['timestamp'],0) +1
+# print (contagem_erros)
 
 ### Exercício 4: Validação de Dados de Entrada
 # Antes de processar os dados de usuários em um sistema de recomendação, 
 # você precisa garantir que cada usuário tenha idade entre 18 e 65 anos e tenha 
 # fornecido um email válido. Escreva um programa que valide essas condições 
 # e imprima "Dados de usuário válidos" ou o erro específico encontrado.
+# idade = int(input('Digite sua idade :'))
+# email = str(input('Digite seu email :'))
+
+# if email.find("@"):
+#     print ('Seu email é válido')
+# else : 
+#     print ('Dados inválidos')
+
+
+# if isinstance(idade,int) :
+#     if idade in range(18,66):
+#         print ('Sua idade é válida')
+#     else :
+#         print ('Dados inválidos')
+
 
 ### Exercício 5: Detecção de Anomalias em Dados de Transações
 # Você está trabalhando em um sistema de detecção de fraude e precisa identificar 
 # transações suspeitas. Uma transação é considerada suspeita se o valor for superior 
 # a R$ 10.000 ou se ocorrer fora do horário comercial (antes das 9h ou depois das 18h). 
 # Dada uma transação como `transacao = {'valor': 12000, 'hora': 20}`, verifique se ela é suspeita.
+transacao = [{'valor': 12000, 'hora': 20},
+            {'valor': 800, 'hora': 12},
+            {'valor': 1000, 'hora': 22},
+            {'valor': 200, 'hora': 18},
+            {'valor': 12000, 'hora': 10},
+            {'valor': 1000, 'hora': 11},
+            {'valor': 100, 'hora': 21},
+            {'valor': 12000, 'hora': 8}]
+
+transacao_suspeita = []
+
+for suspeitos in transacao:
+    if suspeitos['valor'] >= 10000 or suspeitos['hora'] < 9 or suspeitos['hora'] > 18:
+        transacao_suspeita.append(suspeitos)
+    else:
+        pass
+print (transacao_suspeita)
 
 ### Exercício 6. Contagem de Palavras em Textos
 # Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele.
