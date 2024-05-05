@@ -155,21 +155,24 @@
 
 ### Exercício 10. Agregação de Dados por Categoria
 # Objetivo:** Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
-vendas =  [{'categoria':"Carro",'valor':210},
-    {'categoria':"Casa",'valor':250},
-    {'categoria':"Carro",'valor':255},
-    {'categoria':"Casa",'valor':222},
-    {'categoria':"Carro",'valor':1200},
-    {'categoria':"Carro",'valor':203},
-    {'categoria':"Carro",'valor':205},
-    {'categoria':"Casa",'valor':226},
-    {'categoria':"Casa",'valor':212},
-    {'categoria':"Carro",'valor':200}]
+# vendas =  [{'categoria':"Carro",'valor':210},
+#     {'categoria':"Casa",'valor':250},
+#     {'categoria':"Carro",'valor':255},
+#     {'categoria':"Casa",'valor':222},
+#     {'categoria':"Carro",'valor':1200},
+#     {'categoria':"Carro",'valor':203},
+#     {'categoria':"Carro",'valor':205},
+#     {'categoria':"Casa",'valor':226},
+#     {'categoria':"Casa",'valor':212},
+#     {'categoria':"Carro",'valor':200}]
 
-result = {}
-
-for venda in vendas:
-    if 
+# result = {'Casa': int(),'Carro': int()}
+# for venda in vendas:
+#     if venda["categoria"] == "Casa":
+#         result["Casa"] += +venda["valor"]
+#     else: 
+#         result["Carro"] += +venda["valor"]
+# print (result)
     
 
 ### Exercícios com WHILE
@@ -177,14 +180,71 @@ for venda in vendas:
 ### Exercício 11. Leitura de Dados até Flag
 # Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida.
 
+# texto = ""
+# dados = []
+# while texto.lower() != "sair":
+#     texto = input("Digite uma palavra ou sair para finalizar :")
+#     if texto.lower()!= "sair":
+#         dados.append(texto)
+#     else:
+#         break
+
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
 
+# import random
+# ''
+# certo = int()
+# tentativa = int(input("Digite um numero de 1 a 15 :  "))
+# result = int()
+
+# while certo != tentativa:
+#     certo = random.randint(1,15)
+#     print(certo)
+#     result += +1
+# if certo == tentativa:
+#     print(f'Parabéns, você acertou na {result} tentativa')
+
+
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
+# paginas_api = 8
+# pagina_atual = 1
+
+# while pagina_atual < paginas_api:
+#     print(f'Processando {pagina_atual} de {paginas_api} paginas disponíveis')
+#     pagina_atual += +1
+# print(f'Processo finalizado. {pagina_atual} páginas foram processadas')
+
+
 
 ### Exercício 14. Tentativas de Conexão
 # Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
+# max_tentaivas = 5
+# tentativa = 1
+# conexao = False
+
+# while tentativa <= max_tentaivas:
+#     print(f'Tentaiva {tentativa} de {max_tentaivas}')
+#     if conexao == True:
+#         print("Conexão bem sucedida")
+#         break
+#     tentativa += +1
+# else:
+#     print("Falha ao conectar, Limite de tentativas excedido")
+
 
 ### Exercício 15. Processamento de Dados com Condição de Parada
 # Processar itens de uma lista até encontrar um valor específico que indica a parada.
+
+texto = "Ler todo o texto até encontrar sair uma condição de para como a palavra sair ou algo do tipo"
+texto = texto.split()
+stop_cond  = "sair"
+dados = []
+for text in texto:
+    while text.lower() != "sair":
+        dados.append(text)
+        break
+    if text.lower() == "sair":
+        break
+print(dados)
